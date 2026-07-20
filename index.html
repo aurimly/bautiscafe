@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Bauti's Café - Menú Digital</title>
+  <meta name="description" content="Menú digital de Bauti's Café - Coffee & Brunch">
+  <meta name="theme-color" content="#1a1a1a">
+  <meta property="og:title" content="Bauti's Café - Menú Digital">
+  <meta property="og:description" content="Descubrí nuestra carta completa - Cafés, brunch, pastelería y más">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page-bg" aria-hidden="true">
+  <img class="page-bg-img" id="page-bg-img" alt="">
+  <div class="page-bg-overlay"></div>
+</div>
+<div class="menu-container">
+
+  <!-- ===== LANDING VIEW ===== -->
+  <div id="landing-view" class="view active">
+
+    <!-- Language selector floating top-right -->
+    <div class="lang-float">
+      <div class="lang-picker" id="lang-picker">
+        <button class="lang-trigger" id="lang-trigger" type="button"
+                aria-haspopup="listbox" aria-expanded="false" aria-label="Idioma">
+          <img class="lang-flag" id="lang-flag-current" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ea-1f1f8.svg" alt="ES">
+        </button>
+        <ul class="lang-menu" id="lang-menu" role="listbox" aria-label="Idiomas" hidden>
+          <li><button type="button" role="option" data-lang="es" aria-label="Español"><img class="lang-flag" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ea-1f1f8.svg" alt=""></button></li>
+          <li><button type="button" role="option" data-lang="en" aria-label="English"><img class="lang-flag" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" alt=""></button></li>
+        </ul>
+      </div>
+      <select id="lang-selector" class="lang-select-hidden" aria-hidden="true" tabindex="-1">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+      </select>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-logo-text">
+          <span class="hero-logo-top">BAUTI'S</span>
+          <span class="hero-logo-bottom">CAFÉ</span>
+        </div>
+        <p class="tagline">CAFÉ & BRUNCH</p>
+        <h1 class="restaurant-name">Bauti's Café</h1>
+      </div>
+    </div>
+
+    <!-- Quick access row: Wi-Fi / Instagram -->
+    <div class="quick-access" id="quick-access">
+      <button class="qa-item" id="qa-wifi" type="button" aria-expanded="false" aria-controls="wifi-panel">
+        <span class="qa-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="#d4a853">
+            <path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/>
+          </svg>
+        </span>
+        <span class="qa-label" id="qa-wifi-label">Wi-Fi</span>
+      </button>
+      <a class="qa-item" id="qa-instagram" href="https://instagram.com/bautiscafe">
+        <span class="qa-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28">
+            <defs>
+              <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FEDA75"/>
+                <stop offset="25%" stop-color="#FA7E1E"/>
+                <stop offset="50%" stop-color="#D62976"/>
+                <stop offset="75%" stop-color="#962FBF"/>
+                <stop offset="100%" stop-color="#4F5BD5"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#ig-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.805.24 2.227.403.56.217.96.477 1.382.896.419.42.679.819.896 1.381.163.422.347 1.057.403 2.227.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.805-.403 2.227-.217.56-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.163-1.057.347-2.227.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.805-.24-2.227-.403a3.726 3.726 0 01-1.382-.896 3.727 3.727 0 01-.896-1.381c-.163-.422-.347-1.057-.403-2.227-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.056-1.17.24-1.805.403-2.227.217-.56.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.163 1.057-.347 2.227-.403C8.416 2.175 8.796 2.163 12 2.163M12 0C8.741 0 8.332.014 7.052.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.06 1.277.261 2.147.558 2.913a5.883 5.883 0 001.384 2.126 5.883 5.883 0 002.126 1.384c.766.297 1.636.499 2.913.558C8.332 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 1.277-.06 2.147-.261 2.913-.558a5.898 5.898 0 002.126-1.384 5.86 5.86 0 001.384-2.126c.296-.766.499-1.636.558-2.913.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.668-.072-4.948-.06-1.277-.262-2.147-.558-2.913a5.89 5.89 0 00-1.384-2.126A5.868 5.868 0 0019.86.63c-.766-.297-1.636-.499-2.913-.558C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </span>
+        <span class="qa-label" id="qa-instagram-label">@bautiscafe</span>
+      </a>
+    </div>
+
+    <!-- Wi-Fi expandable panel -->
+    <div class="wifi-panel" id="wifi-panel" aria-hidden="true">
+      <div class="wifi-row">
+        <span class="wifi-label" id="wifi-network-label">Red:</span>
+        <span class="wifi-value" id="wifi-network-value"></span>
+      </div>
+      <div class="wifi-row">
+        <span class="wifi-label" id="wifi-password-label">Contraseña:</span>
+        <span class="wifi-value" id="wifi-password-value"></span>
+        <button class="wifi-copy" id="wifi-copy-btn" type="button">Copiar</button>
+      </div>
+    </div>
+
+    <!-- Categories Grid -->
+    <div class="categories-section">
+      <div class="categories-grid" id="categories-grid">
+        <div class="skeleton-cat"></div>
+        <div class="skeleton-cat"></div>
+        <div class="skeleton-cat"></div>
+        <div class="skeleton-cat"></div>
+        <div class="skeleton-cat"></div>
+        <div class="skeleton-cat"></div>
+      </div>
+    </div>
+
+    <!-- Floating Search -->
+    <div class="search-float" id="search-trigger">
+      <span class="search-float-icon">🔍</span>
+      <span class="search-float-text" id="search-placeholder-text">¿Qué tenés ganas de tomar?</span>
+    </div>
+  </div>
+
+  <!-- ===== CATEGORY VIEW ===== -->
+  <div id="category-view" class="view">
+    <div class="category-header">
+      <button class="back-btn" id="back-to-landing">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <h2 class="category-title" id="category-title"></h2>
+    </div>
+    <div class="subcategory-tabs" id="subcategory-tabs"></div>
+    <div class="subcategories-container" id="subcategories-container"></div>
+  </div>
+
+  <!-- ===== SEARCH VIEW ===== -->
+  <div id="search-view" class="view">
+    <div class="search-header">
+      <button class="back-btn" id="back-from-search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar..." autocomplete="off">
+    </div>
+    <div class="search-results" id="search-results">
+      <div class="search-empty" id="search-empty">
+        <span class="search-empty-icon">☕</span>
+        <p class="search-empty-text">Buscá tu bebida o plato favorito</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ITEM MODAL ===== -->
+  <div id="item-modal" class="modal-overlay">
+    <div class="modal-drawer">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div class="modal-image-wrap">
+        <img id="modal-image" class="modal-image" src="" alt="">
+        <div class="modal-image-placeholder" id="modal-image-placeholder">☕</div>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="modal-title"></h3>
+        <p class="modal-description" id="modal-description"></p>
+        <div class="modal-extras" id="modal-extras"></div>
+        <div class="modal-prices" id="modal-prices"></div>
+        <div class="modal-labels" id="modal-labels"></div>
+        <div class="modal-allergens" id="modal-allergens">
+          <p class="allergens-title">Alérgenos:</p>
+          <div class="allergens-list" id="allergens-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
