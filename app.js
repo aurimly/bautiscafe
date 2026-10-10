@@ -27,7 +27,8 @@
       wifi_password: 'Contraseña',
       wifi_copy: 'Copiar',
       wifi_copied: '✓ Copiado',
-      qa_instagram: 'Instagram'
+      qa_instagram: 'Instagram',
+      qa_whatsapp: 'WhatsApp'
     },
     en: {
       search_placeholder: 'What are you in the mood for?',
@@ -42,7 +43,8 @@
       wifi_password: 'Password',
       wifi_copy: 'Copy',
       wifi_copied: '✓ Copied',
-      qa_instagram: 'Instagram'
+      qa_instagram: 'Instagram',
+      qa_whatsapp: 'WhatsApp'
     }
   };
 
@@ -76,7 +78,8 @@
       hero_image_url: 'images/hero.jpg',
       wifi_ssid: 'Bautis-Guest',
       wifi_password: 'bautis2025',
-      instagram_url: 'https://instagram.com/bautiscafe'
+      instagram_url: 'https://instagram.com/bautiscafe',
+      whatsapp_url: 'https://wa.me/5555555'
     },
     categories: [
       {
@@ -269,6 +272,10 @@
       }
     }
 
+    // WhatsApp
+    var waEl = $('qa-whatsapp');
+    if (waEl && r.whatsapp_url) waEl.setAttribute('href', r.whatsapp_url);
+
     applyQuickAccessLabels();
 
     // Search placeholder
@@ -287,6 +294,8 @@
     if (pLbl) pLbl.textContent = t('wifi_password') + ':';
     var copyBtn = $('wifi-copy-btn');
     if (copyBtn && !copyBtn.classList.contains('copied')) copyBtn.textContent = t('wifi_copy');
+    var waLbl = $('qa-whatsapp-label');
+    if (waLbl) waLbl.textContent = t('qa_whatsapp');
   }
 
   function renderCategories() {
