@@ -732,6 +732,7 @@ button.qa-item { font: inherit; }
 .search-input::placeholder { color:var(--text-secondary); }
 .search-input:focus { outline:none; border-color:var(--accent-gold); }
 .search-results { padding:16px; }
+#search-empty { padding:16px; }
 .search-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:80px 32px; text-align:center; }
 .search-empty-icon { font-size:3rem; margin-bottom:16px; opacity:0.5; }
 .search-empty-text { font-size:0.9rem; color:var(--text-secondary); }
